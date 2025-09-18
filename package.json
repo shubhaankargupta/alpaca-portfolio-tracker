@@ -1,0 +1,12 @@
+{
+  "name": "macrostrat-portfolio-tracker",
+  "version": "1.0.0",
+  "description": "Self‑hosted portfolio dashboard comparing MacroStrat performance to market benchmarks.",
+  "main": "server/server.js",
+  "scripts": {
+    "start": "node server/server.js"
+  },
+  "author": "Shubhaankar Gupta",
+  "license": "MIT",
+  "dependencies": {}
+}

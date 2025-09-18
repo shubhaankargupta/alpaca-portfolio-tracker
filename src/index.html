@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet" />
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="../assets/favicon.png" />
+  <title>MacroStrat Portfolio Tracker</title>
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <header>
+    <h1>MacroStrat Live Tracker</h1>
+  </header>
+  <main>
+    <div id="error" class="error" style="display: none;"></div>
+
+    <!-- Performance Metrics -->
+    <h2>Performance Metrics</h2>
+    <div id="metrics-container" class="metrics">
+      <div class="loading">Loading metrics…</div>
+    </div>
+
+    <!-- Portfolio vs Benchmarks Chart -->
+    <h2>Portfolio Performance vs S&amp;P 500 &amp; NASDAQ</h2>
+    <div class="chart-container">
+      <canvas id="performance-chart" width="800" height="400"></canvas>
+    </div>
+
+    <div class="section-grid">
+      <!-- Current Positions -->
+      <div>
+        <h2>Current Positions</h2>
+        <div id="positions-container">
+          <div class="loading">Loading positions…</div>
+        </div>
+      </div>
+
+      <!-- Trade History -->
+      <div>
+        <h2>Trade History (Last 3 Months)</h2>
+        <div id="trades-container" class="trade-history">
+          <div class="loading">Loading trade history…</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Last Updated Footer -->
+    <footer style="margin-top: 3rem; padding: 1rem; text-align: center; border-top: 1px solid #ddd; color: #666; font-size: 0.9rem;">
+      <div id="last-updated">Loading data…</div>
+    </footer>
+  </main>
+
+  <!-- Chart.js and dependencies -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.umd.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/date-fns/2.29.3/index.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/chartjs-adapter-date-fns/2.0.1/chartjs-adapter-date-fns.bundle.min.js"></script>
+  <!-- Dashboard logic -->
+  <script type="module" src="js/dashboard.js"></script>
+</body>
+</html>

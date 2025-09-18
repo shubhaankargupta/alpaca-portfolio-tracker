@@ -1,0 +1,22 @@
+{
+  "trades": [
+    {
+      "date": "2025-09-17",
+      "ticker": "AAPL",
+      "enterPrice": 150.00,
+      "exitPrice": 160.00,
+      "realizedPL": 100.00,
+      "quantity": 10,
+      "type": "Long"
+    },
+    {
+      "date": "2025-09-10",
+      "ticker": "MSFT",
+      "enterPrice": 295.00,
+      "exitPrice": 310.00,
+      "realizedPL": 75.00,
+      "quantity": 5,
+      "type": "Long"
+    }
+  ]
+}
