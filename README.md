@@ -1,18 +1,21 @@
-# MacroStrat Portfolio Tracker
+# Alpaca Portfolio Tracker
+![Banner](/assets/alpaca.png "a title")
 
-**MacroStrat Portfolio Tracker** is a self‑hosted dashboard for monitoring your investment portfolio alongside popular market benchmarks.  
-It is designed with privacy in mind – no sensitive account data or trade history needs to be published publicly.  
+**Alpaca Portfolio Tracker** is a self‑hosted dashboard for monitoring your investment portfolio alongside popular market benchmarks such as
+the S&P 500 and NASDAQ Composite once you start trading. Use this to test strategies, make trades, compete with peers, and flex in quant interviews.
+It is designed with privacy in mind – no sensitive account data or trade history needs to be published publicly. 
 
-This repository provides a simple Node/Express server, a lightweight front‑end powered by Chart.js, and Python scripts for pulling data from the Alpaca trading API and Yahoo Finance.  
+This repository provides a simple Node server, a lightweight front‑end powered by Chart.js, and Python scripts for pulling data from the Alpaca trading API and Yahoo Finance. It's not problem if you've never worked with Node before (I hadn't either) - by the end of this, you will.
 You can use the provided sanitised sample data to experiment with the dashboard or fetch fresh data yourself using your own API keys.  
 
 ## Features
 
-- 📈 **Performance Metrics** – calculate total return, annualised return and Sharpe ratio from your Alpaca account history.
+- 📈 **Performance Metrics** – calculate total return, annualized returns and Sharpe ratio from your Alpaca account history.
 - 📊 **Portfolio vs Benchmarks** – compare your portfolio’s percentage return against the S&P 500 and NASDAQ Composite indices.
 - 🧾 **Positions & Trades** – display your current open positions and a rolling trade history.
 - 🔧 **Self‑hosted** – run locally without exposing any secrets; all API keys are pulled from environment variables.
 - 🧪 **Sample data** – explore the dashboard with safe, anonymised JSON files contained in the `data/` directory.
+- 🔥 **Online visibility** – publish your portfolio on a personal domain to show off.
 
 ## Getting started
 
@@ -24,13 +27,29 @@ The project requires the following software installed on your system:
 - **Node.js 14+** – runs the simple web server.
 - **pip** – Python package manager.
 
-### Installation
+
+## Setting up Alpaca
+
+1. **Sign up for Alpaca**  
+   Go to [alpaca.markets](https://alpaca.markets) and create a free account.  
+   Switch to **Paper Trading** (fake money) so you can practice without monetary risk.
+
+2. **Create API Keys**  
+   - In your Alpaca dashboard, go to **Your Account → API Keys**.  
+   - Generate a new key pair. You will get:
+     - `APCA_API_KEY_ID`
+     - `APCA_API_SECRET_KEY`  
+   - Copy these somewhere safe — Alpaca won’t show the secret again.
+
+
+
+## Installation
 
 1. **Clone the repository**:
 
    ```bash
-   git clone https://github.com/your‑username/macrostrat‑portfolio‑tracker.git
-   cd macrostrat‑portfolio‑tracker
+   git clone https://github.com/your‑username/alpaca‑portfolio‑tracker.git
+   cd alpaca‑portfolio‑tracker
    ```
 
 2. **Create a virtual environment and install Python dependencies**:
@@ -52,13 +71,16 @@ The project requires the following software installed on your system:
 
 4. **Copy and configure environment variables**:
 
-   The application uses environment variables to access the Alpaca API and configure the server.  
-   Copy `.env.example` to `.env` and fill in your credentials:
-
+   Copy `.env.example` to `.env`:
    ```bash
    cp .env.example .env
-   # then edit .env with your API keys
    ```
+   Make sure you are properly connected to Alpaca and pasted `APCA_API_KEY_ID` `APCA_API_SECRET_KEY` in `.env`.
+
+   Optionally, make trades to display on your public portfolio. You may use the GUI or (cooler) API alternatives:
+
+   - [Alpaca Docs](https://github.com/alpacahq/alpaca-py)
+   - [Sample Alpaca Notebooks](https://github.com/alpacahq/notebooks)
 
 5. **Fetch fresh data (optional)**:
 
@@ -84,10 +106,12 @@ The project requires the following software installed on your system:
    The web server will serve the dashboard at [http://localhost:3000](http://localhost:3000).  
    Open your browser to see the portfolio metrics, charts and tables.  
 
+
+
 ## Repository structure
 
 ```
-macrostrat-portfolio-tracker/
+alpaca-portfolio-tracker/
 ├── README.md            # project overview and instructions (this file)
 ├── LICENSE              # MIT licence for the project
 ├── .gitignore           # files and folders to exclude from git
